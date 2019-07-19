@@ -34,3 +34,34 @@ The package name contains "ROS" specific info, but you can use this as a standal
 /opt/ros/indigo/lib/libcsm-static.a
 /opt/ros/indigo/lib/libcsm.so
 ```
+
+Install from sources in ROS (Ubuntu 18.04 and ROS Melodic)
+------------------------------------------------------------
+1. Install dependencies:
+
+```
+sudo apt-get install libgsl-dev
+```
+Optional (usually installed with libgsl)
+```
+sudo apt-get install libcairo2-dev
+```
+
+2. Clone this repo into an isolated from your normal catkin workspace folder into a `src` subfolder or into your catkin_isolated_workspace/src, then build:
+
+```
+catkin_make_isolated
+```
+
+And install:
+
+```
+catkin_make_isolated --install
+```
+
+3. Source the installation folder into your .bashrc or .zsh, e.g.:
+
+```
+source /home/user_name/csm_build_isolated_ws/install_isolated/setup.bash
+```
+
